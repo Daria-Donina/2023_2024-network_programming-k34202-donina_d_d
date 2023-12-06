@@ -88,5 +88,9 @@ ansible_ssh_pass=admin
 
 ![image](https://github.com/Daria-Donina/2023_2024-network_programming-k34202-donina_d_d/assets/43678323/d8a4a899-efb4-47b6-9772-48be4571fd69)
 
+Схема сети выглядит следующим образом:
+
+![image](1.png)
+
 # Вывод
 В ходе данной работы удалось создать еще один CHR и настроить на нем OVPN-клиент, написать сценарий для Ansible, настроить OSPF и NTP-клиент на двух роутерах.
