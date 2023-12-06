@@ -43,13 +43,29 @@ ansible --version
 
 
 ### 3. Поднятие VPN туннеля.
-Создаем Wireguard/OpenVPN/L2TP сервер на облачной виртуальной машине. При этом CHR будет выступать в качестве VPN клиента.
-...код...
-...скрин...
+Создаем OpenVPN сервер на облачной виртуальной машине. При этом CHR будет выступать в качестве VPN клиента.
+```
+apt update && apt -y install ca-certificates wget net-tools gnupg
+wget https://as-repository.openvpn.net/as-repo-public.asc -qO /etc/apt/trusted.gpg.d/as-repository.asc
+echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/as-repository.asc] http://as-repository.openvpn.net/as/debian jammy main">/etc/apt/sources.list.d/openvpn-as-repo.list
+apt update && apt -y install openvpn-as
+```
 
-Проверим работу VPN туннеля между VPN сервером и VPN клиентом на RouterOS (CHR)
-...скрин...
+![image](https://github.com/Daria-Donina/2023_2024-network_programming-k34202-donina_d_d/assets/43678323/25caddc3-919c-4d77-a251-5db9df5655f7)
+
+Скачиваем .ovpn сертификат и загружаем его в WinBox. 
+
+![image](https://github.com/Daria-Donina/2023_2024-network_programming-k34202-donina_d_d/assets/43678323/eda59213-0812-44f9-a620-3fa3c7344a0c)
+
+После этого настраиваем OVPN интерфейс в WinBox.
+
+![image](https://github.com/Daria-Donina/2023_2024-network_programming-k34202-donina_d_d/assets/43678323/f157aa78-c19d-4282-a6a1-1d43fe13fda2)
+
+
+Трафик передается по интерфейсу, значит туннель работает:
+
+![image](https://github.com/Daria-Donina/2023_2024-network_programming-k34202-donina_d_d/assets/43678323/e8a387a5-d0b6-43eb-b916-7d1ca0be497a)
 
 
 # Вывод
-В ходе данной работы был 
+В ходе данной работы был развернут VPN туннель между VPN сервером на облачной виртуальной машине и клиентом с CHR.
