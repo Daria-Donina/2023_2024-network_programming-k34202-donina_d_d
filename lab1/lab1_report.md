@@ -66,6 +66,8 @@ apt update && apt -y install openvpn-as
 
 ![image](https://github.com/Daria-Donina/2023_2024-network_programming-k34202-donina_d_d/assets/43678323/e8a387a5-d0b6-43eb-b916-7d1ca0be497a)
 
+Схема получившейся сети следующая:
+![image](3.png)
 
 # Вывод
 В ходе данной работы был развернут VPN туннель между VPN сервером на облачной виртуальной машине и клиентом с CHR.
